@@ -12,8 +12,15 @@ const statusColors: { [key in CourseStatus | 'Lopend' | 'Afgerond']: string } = 
 };
 
 
-const Pill: React.FC<{ text: string; className?: string }> = ({ text, className }) => (
-  <span className={`px-3 py-1 text-xs font-semibold rounded-full ${className}`}>
+const Pill: React.FC<{ text: string; className?: string }> = ({ text, className = '' }) => (
+  <span className={`inline-flex items-center justify-center px-3 py-1 text-xs font-semibold rounded-full w-16 md:w-20 text-center ${className}`}>
+    {text}
+  </span>
+);
+
+// Compact skill pill used inside project dialogs — no fixed width so it sizes to content.
+const SkillPill: React.FC<{ text: string; className?: string }> = ({ text, className = '' }) => (
+  <span className={`inline-flex items-center px-2 py-1 text-xs font-semibold rounded-full ${className}`}>
     {text}
   </span>
 );
@@ -139,7 +146,7 @@ export const Education: React.FC<{ content: EducationContent }> = ({ content }) 
                       <h4 className="font-bold text-lg">{p.title} <span className="text-sm font-normal text-[#A1A1AA]">{p.date}</span></h4>
                       <p className="text-sm my-2">{p.description}</p>
                       <div className="flex flex-wrap gap-2 mt-2">
-                        {p.skills.map(skill => <Pill key={skill} text={skill} className="bg-gray-700 text-gray-300"/>)}
+                        {p.skills.map(skill => <SkillPill key={skill} text={skill} className="bg-gray-700 text-gray-300"/>)}
                       </div>
                     </div>
                   ))}
@@ -188,7 +195,10 @@ export const Education: React.FC<{ content: EducationContent }> = ({ content }) 
                     {selectedItem.dialogContent.followedCourses.map(course => (
                       <li key={course.name} className="flex justify-between items-center bg-[#0B1B2B] p-2 rounded">
                         <span>{course.name}</span>
-                         <span className="text-sm text-[#A1A1AA]">{course.credits} EC</span>
+                        <div className="flex items-center space-x-2">
+                          <span className="text-sm text-[#A1A1AA]">5 EC</span>
+                          <Pill text="Afgerond" className={statusColors['Afgerond']} />
+                        </div>
                       </li>
                     ))}
                     </ul>

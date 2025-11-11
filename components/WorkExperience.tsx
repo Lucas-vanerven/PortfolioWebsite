@@ -17,7 +17,11 @@ const JobCard: React.FC<{ job: Job; category?: string }> = ({ job, category }) =
         <div>
           <h3 className="text-xl font-bold text-[#3ABFF8]">{job.title}</h3>
           <p className="font-semibold text-[#E5E7EB]">{job.company}</p>
-          <p className="text-xs text-[#A1A1AA] mt-1">{job.date}</p>
+          <p className="mt-1">
+            <span className="inline-block text-xs md:text-sm text-[#E5E7EB] border border-[#A1A1AA] px-2 py-1 rounded-full">
+              {job.date}
+            </span>
+          </p>
         </div>
       </div>
       {job.logoUrl && (
