@@ -29,7 +29,7 @@ export const Hero: React.FC<HeroProps> = ({ content }) => {
     <AnimatedSection>
       <section id="hero" className="min-h-screen flex items-center justify-center py-24">
         <div className="grid md:grid-cols-2 gap-12 items-center">
-          <div className="w-full h-96 md:h-[32rem] bg-[#112B3C] rounded-lg overflow-hidden relative shadow-2xl">
+          <div className="w-full md:w-3/4 h-96 md:h-[32rem] bg-[#112B3C] rounded-lg overflow-hidden relative shadow-2xl mx-auto">
             {images.map((src, index) => (
               <img
                 key={src}
