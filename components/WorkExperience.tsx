@@ -42,12 +42,12 @@ const SkillsTable: React.FC<{ category: SkillCategory }> = ({ category }) => (
     <div className="bg-[#112B3C] p-6 rounded-lg border border-[#1E3A5F]">
         <h4 className="text-lg font-bold text-[#3ABFF8] border-b-2 border-[#1E3A5F] pb-2 mb-4">{category.title}</h4>
         <ul className="space-y-3">
-            {category.skills.map(skill => (
-                <li key={skill.name} className="flex items-center text-[#E5E7EB]">
-                    {skill.logoUrl ? <img src={skill.logoUrl} alt={skill.name} className="w-5 h-5 mr-3"/> : <span className="w-5 h-5 mr-3"></span>}
-                    {skill.name}
-                </li>
-            ))}
+      {category.skills.map(skill => (
+                <li key={skill.name} tabIndex={0} className="flex items-center text-[#E5E7EB] transition-colors duration-150 rounded-md px-1 py-1 hover:text-[#FB923C] hover:bg-[#FB923C]/20 hover:font-semibold focus:outline-none focus-visible:ring-2 focus-visible:ring-[#FB923C]/40 cursor-default">
+          {skill.logoUrl ? <img src={skill.logoUrl} alt={skill.name} className="w-5 h-5 mr-3"/> : <span className="w-5 h-5 mr-3"></span>}
+          {skill.name}
+        </li>
+      ))}
         </ul>
     </div>
 );
