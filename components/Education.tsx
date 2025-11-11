@@ -33,7 +33,7 @@ const EducationCard: React.FC<{ item: EducationItem; onCardClick: (item: Educati
     <>
       <div onClick={handleClick} className="cursor-pointer">
         <Card>
-          <div className="p-6 relative">
+          <div className="p-6 pb-12 md:pb-6 relative">
             <div className="flex items-start">
               <div>
                 <h3 className="text-2xl font-bold text-[#3ABFF8]">{item.institution}</h3>
@@ -68,7 +68,18 @@ const EducationCard: React.FC<{ item: EducationItem; onCardClick: (item: Educati
             )}
 
             {(item.dialogContent || item.accordionContent) && (
-              <p className="text-center mt-6 text-[#3ABFF8] font-semibold text-sm">{item.clickableText}</p>
+              <div className="absolute bottom-[6px] right-4">
+                <div className="flex items-center space-x-2 text-[#3ABFF8] font-semibold text-sm cursor-pointer">
+                  <span>{item.clickableText}</span>
+                  {item.accordionContent && (
+                    <span className={`transform transition-transform duration-300 ${isAccordionOpen ? 'rotate-90' : 'rotate-0'}`}>
+                      <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                      </svg>
+                    </span>
+                  )}
+                </div>
+              </div>
             )}
           </div>
         </Card>
@@ -76,7 +87,7 @@ const EducationCard: React.FC<{ item: EducationItem; onCardClick: (item: Educati
 
       {item.accordionContent && (
         <div className={`overflow-hidden transition-all duration-500 ease-in-out ${isAccordionOpen ? 'max-h-96' : 'max-h-0'}`}>
-          <div className="bg-[#0f2638] rounded-b-lg p-6 -mt-2">
+          <div className={`bg-[#0f2638] rounded-t-lg rounded-b-lg p-6 mt-4 md:mt-2 w-11/12 md:w-5/6 mx-auto ${item.id === 'baken' ? 'border-r-4 border-[#3ABFF8] transition-all duration-300 hover:shadow-2xl hover:shadow-[#3ABFF8]/20 hover:border-[#F97316] hover:-translate-y-1 hover:-translate-x-1' : ''}`}>
             <h4 className="text-xl font-bold text-[#3ABFF8]">{item.accordionContent.title}</h4>
             <div className="flex items-center mt-4">
                 {item.accordionContent.logoUrl && <img src={item.accordionContent.logoUrl} alt="Certificate Logo" className="h-10 mr-4" />}
