@@ -15,6 +15,22 @@
       .fade-in-up {
         animation: fadeIn 0.6s ease-out forwards;
       }
+      /* Basic fallback styles so content is visible even when Tailwind CDN
+         doesn't generate utilities for classes that are added by React at runtime. */
+      body {
+        color: #E5E7EB;
+        font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+      /* Simple container fallback for when Tailwind container utility isn't present */
+      .container {
+        max-width: 1200px;
+        margin-left: auto;
+        margin-right: auto;
+        padding-left: 1rem;
+        padding-right: 1rem;
+      }
     </style>
   <script type="importmap">
 {
