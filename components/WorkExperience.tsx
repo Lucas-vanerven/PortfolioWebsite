@@ -1,5 +1,5 @@
 
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import type { WorkExperienceContent, Job, SkillCategory, TransferableSkill } from '../types';
 import { Card } from './ui/Card';
 import { AnimatedSection } from './ui/AnimatedSection';
@@ -64,6 +64,27 @@ const TransferableSkillCard: React.FC<{ skill: TransferableSkill }> = ({ skill }
 
 export const WorkExperience: React.FC<{ content: WorkExperienceContent }> = ({ content }) => {
   const [activeCategory, setActiveCategory] = useState<'it' | 'communication' | 'logistics'>('it');
+  const navRef = useRef<HTMLDivElement | null>(null);
+  const itemRefs = useRef<Record<string, HTMLButtonElement | null>>({});
+  const [bubbleStyle, setBubbleStyle] = useState<{ left: number; width: number }>({ left: 0, width: 0 });
+
+  const updateBubble = () => {
+    const container = navRef.current;
+    const activeEl = itemRefs.current[activeCategory];
+    if (!container || !activeEl) return;
+    const containerRect = container.getBoundingClientRect();
+    const itemRect = activeEl.getBoundingClientRect();
+    setBubbleStyle({ left: itemRect.left - containerRect.left, width: itemRect.width });
+  };
+
+  useEffect(() => {
+    // update on mount and whenever activeCategory changes
+    updateBubble();
+    const onResize = () => updateBubble();
+    window.addEventListener('resize', onResize);
+    return () => window.removeEventListener('resize', onResize);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [activeCategory]);
   
   const categories = [
     { id: 'it', name: content.categories.it },
@@ -77,12 +98,20 @@ export const WorkExperience: React.FC<{ content: WorkExperienceContent }> = ({ c
         <h2 className="text-4xl font-bold text-center mb-4 text-[#3ABFF8]">{content.title}</h2>
         
         <div className="flex justify-center mb-8">
-          <div className="flex space-x-2 bg-[#112B3C] p-2 rounded-full border border-[#1E3A5F]">
+          <div ref={navRef} className="relative flex space-x-2 bg-[#112B3C] p-2 rounded-full border border-[#1E3A5F]">
+            {/* moving bubble */}
+            <div
+              aria-hidden
+              className="absolute top-1/2 -translate-y-1/2 h-10 rounded-full bg-[#3ABFF8] transition-all duration-300 motion-reduce:transition-none z-0"
+              style={{ left: bubbleStyle.left, width: bubbleStyle.width }}
+            />
+
             {categories.map(cat => (
               <button
                 key={cat.id}
+                ref={(el) => (itemRefs.current[cat.id] = el)}
                 onClick={() => setActiveCategory(cat.id as any)}
-                className={`px-4 py-2 text-sm md:text-base font-semibold rounded-full transition-colors duration-300 ${activeCategory === cat.id ? 'bg-[#3ABFF8] text-[#0B1B2B]' : 'text-[#A1A1AA] hover:bg-[#1E3A5F]'}`}
+                className={`px-4 py-2 text-sm md:text-base font-semibold rounded-full relative z-10 transition-colors duration-300 ${activeCategory === cat.id ? 'text-[#0B1B2B]' : 'text-[#A1A1AA] hover:text-[#E5E7EB]'}`}
               >
                 {cat.name}
               </button>

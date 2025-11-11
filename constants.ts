@@ -145,7 +145,7 @@ export const CONTENT: AppContent = {
     workExperience: {
       title: 'Werkervaring',
       categories: {
-        it: 'ICT-Werkervaring',
+        it: 'ICT',
         communication: 'Communicatie & Onderwijs',
         logistics: 'Logistiek & Retail',
       },
