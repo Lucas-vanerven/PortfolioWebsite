@@ -34,12 +34,14 @@ const EducationCard: React.FC<{ item: EducationItem; onCardClick: (item: Educati
       <div onClick={handleClick} className="cursor-pointer">
         <Card>
           <div className="p-6 relative">
-            <div className="flex justify-between items-start">
+            <div className="flex items-start">
               <div>
                 <h3 className="text-2xl font-bold text-[#3ABFF8]">{item.institution}</h3>
-                <p className="text-sm text-[#A1A1AA] mb-4">{item.years}</p>
+                <div className="mt-2 flex items-center space-x-3">
+                  <p className="text-sm text-[#A1A1AA]">{item.years}</p>
+                  <Pill text={item.status} className={statusColors[item.status]} />
+                </div>
               </div>
-              <Pill text={item.status} className={statusColors[item.status]} />
             </div>
 
             <div className="grid grid-cols-2 gap-4 mt-4 border-t border-[#1E3A5F] pt-4">
@@ -107,9 +109,11 @@ export const Education: React.FC<{ content: EducationContent }> = ({ content }) 
     <AnimatedSection>
       <section id="opleiding" className="py-24">
         <h2 className="text-4xl font-bold text-center mb-12 text-[#3ABFF8]">{content.title}</h2>
-        <div className="grid md:grid-cols-1 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 gap-8">
           {content.institutions.map((item) => (
-            <EducationCard key={item.id} item={item} onCardClick={handleCardClick} />
+            <div key={item.id} className="w-full md:w-2/3 mx-auto">
+              <EducationCard item={item} onCardClick={handleCardClick} />
+            </div>
           ))}
         </div>
         
