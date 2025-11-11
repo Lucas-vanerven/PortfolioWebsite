@@ -5,26 +5,28 @@ import { Card } from './ui/Card';
 import { AnimatedSection } from './ui/AnimatedSection';
 
 const Pill: React.FC<{ text: string }> = ({ text }) => (
-  <span className="inline-block bg-[#1E3A5F] text-[#A1A1AA] px-3 py-1 text-xs font-semibold rounded-full">
+  <span className="inline-flex items-center bg-[#1e3a5f] text-[#3abff8] px-4 py-1 text-sm md:text-base font-bold rounded-full">
     {text}
   </span>
 );
 
-const JobCard: React.FC<{ job: Job }> = ({ job }) => (
+const JobCard: React.FC<{ job: Job; category?: string }> = ({ job, category }) => (
   <Card>
     <div className="p-6 relative">
       <div className="flex justify-between items-start mb-2">
         <div>
           <h3 className="text-xl font-bold text-[#3ABFF8]">{job.title}</h3>
           <p className="font-semibold text-[#E5E7EB]">{job.company}</p>
+          <p className="text-xs text-[#A1A1AA] mt-1">{job.date}</p>
         </div>
-        <span className="text-xs text-[#A1A1AA] bg-[#0B1B2B] px-2 py-1 rounded">{job.date}</span>
       </div>
       {job.logoUrl && (
         <img src={job.logoUrl} alt={`${job.company} logo`} className="absolute top-6 right-6 w-16 h-16 object-contain opacity-10" />
       )}
-      {job.supervisor && <p className="text-sm text-[#A1A1AA] mb-4"><strong>Praktijkbegeleider / Coach:</strong> {job.supervisor}</p>}
+      {/* For IT jobs, show supervisor under the description; otherwise show above */}
+  {category !== 'it' && job.supervisor && <p className="text-sm text-[#A1A1AA] mb-4 pb-2"><strong>Praktijkbegeleider / Coach:</strong> {job.supervisor}</p>}
       <p className="text-[#A1A1AA] mb-4">{job.description}</p>
+  {category === 'it' && job.supervisor && <p className="text-sm text-[#A1A1AA] mt-2 pb-2"><strong>Praktijkbegeleider / Coach:</strong> {job.supervisor}</p>}
       <div className="flex flex-wrap gap-2">
         {job.skills.map(skill => <Pill key={skill} text={skill} />)}
       </div>
@@ -86,7 +88,7 @@ export const WorkExperience: React.FC<{ content: WorkExperienceContent }> = ({ c
 
         <div className="space-y-8">
           {content.jobs[activeCategory].map((job) => (
-            <JobCard key={`${job.company}-${job.title}`} job={job} />
+            <JobCard key={`${job.company}-${job.title}`} job={job} category={activeCategory} />
           ))}
         </div>
 
