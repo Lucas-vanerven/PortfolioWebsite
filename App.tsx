@@ -17,19 +17,21 @@ function App() {
 
   return (
     <div className="bg-[#0B1B2B] text-[#E5E7EB] font-sans leading-relaxed">
-      <Header 
-        content={content.header} 
-        language={language} 
-        setLanguage={setLanguage} 
-      />
-      <main className="container mx-auto px-4 md:px-8 lg:px-16">
-        <Hero content={content.hero} />
-        <AboutMe content={content.aboutMe} />
-        <Education content={content.education} />
-        <WorkExperience content={content.workExperience} />
-        <Hobbies content={content.hobbies} />
-        <Goals content={content.goals} />
-      </main>
+      <div className="w-full mx-auto px-4 md:px-8 md:w-3/4">
+        <Header
+          content={content.header}
+          language={language}
+          setLanguage={setLanguage}
+        />
+        <main className="w-full">
+          <Hero content={content.hero} />
+          <AboutMe content={content.aboutMe} />
+          <Education content={content.education} />
+          <WorkExperience content={content.workExperience} />
+          <Hobbies content={content.hobbies} />
+          <Goals content={content.goals} />
+        </main>
+      </div>
       <Footer content={content.footer} />
     </div>
   );
