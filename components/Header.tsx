@@ -1,5 +1,5 @@
 
-import React from 'react';
+import React, { useRef, useEffect, useState } from 'react';
 import type { HeaderContent, Language } from '../types';
 
 interface HeaderProps {
@@ -37,6 +37,31 @@ export const Header: React.FC<HeaderProps> = ({ content, language, setLanguage }
     }
   };
 
+  // language toggle bubble measurement (keeps bubble aligned when translations change)
+  const langContainerRef = useRef<HTMLDivElement | null>(null);
+  const langItemRefs = useRef<Record<string, HTMLButtonElement | null>>({});
+  const [langBubbleStyle, setLangBubbleStyle] = useState<{ left: number; width: number }>({ left: 0, width: 0 });
+
+  const updateLangBubble = () => {
+    const container = langContainerRef.current;
+    const activeEl = langItemRefs.current[language];
+    if (!container || !activeEl) return;
+    window.requestAnimationFrame(() => {
+      const containerRect = container.getBoundingClientRect();
+      const itemRect = activeEl.getBoundingClientRect();
+      setLangBubbleStyle({ left: itemRect.left - containerRect.left, width: itemRect.width });
+    });
+  };
+
+  useEffect(() => {
+    updateLangBubble();
+    const onResize = () => updateLangBubble();
+    window.addEventListener('resize', onResize);
+    return () => window.removeEventListener('resize', onResize);
+    // also recalc when content changes (translations)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [language, content]);
+
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-[#0B1B2B]/80 backdrop-blur-sm shadow-lg">
@@ -49,16 +74,23 @@ export const Header: React.FC<HeaderProps> = ({ content, language, setLanguage }
                 {link.text}
               </button>
             ))}
-            <div className="flex items-center space-x-2 bg-[#112B3C] p-1 rounded-full">
-              <button 
+            <div ref={langContainerRef} className="relative inline-flex items-center bg-[#112B3C] p-1 rounded-full">
+              <div
+                aria-hidden
+                className="absolute top-1/2 -translate-y-1/2 h-8 rounded-full bg-[#3ABFF8] transition-all duration-300 z-0"
+                style={{ left: langBubbleStyle.left, width: langBubbleStyle.width }}
+              />
+              <button
+                ref={(el) => (langItemRefs.current['nl'] = el)}
                 onClick={() => setLanguage('nl')}
-                className={`px-3 py-1 text-sm rounded-full ${language === 'nl' ? 'bg-[#3ABFF8] text-[#0B1B2B]' : 'text-[#A1A1AA]'}`}
+                className={`relative z-10 px-3 py-1 text-sm rounded-full ${language === 'nl' ? 'text-[#0B1B2B]' : 'text-[#A1A1AA]'}`}
               >
                 NL
               </button>
-              <button 
+              <button
+                ref={(el) => (langItemRefs.current['en'] = el)}
                 onClick={() => setLanguage('en')}
-                className={`px-3 py-1 text-sm rounded-full ${language === 'en' ? 'bg-[#3ABFF8] text-[#0B1B2B]' : 'text-[#A1A1AA]'}`}
+                className={`relative z-10 px-3 py-1 text-sm rounded-full ${language === 'en' ? 'text-[#0B1B2B]' : 'text-[#A1A1AA]'}`}
               >
                 EN
               </button>
