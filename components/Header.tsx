@@ -102,8 +102,30 @@ export const Header: React.FC<HeaderProps> = ({ content, language, setLanguage }
               </button>
             </div>
           </nav>
-          <div className="md:hidden">
-            {/* Mobile menu could be implemented here */}
+          <div className="md:hidden flex items-center">
+            {/* Mobile language pill visually matching desktop variant (simplified sliding bubble) */}
+            <div className="relative inline-flex items-center bg-[#112B3C] p-1 rounded-full">
+              {/* simplified bubble: fixed 50% width, positioned left or right based on language */}
+              <div
+                aria-hidden
+                className="absolute top-1/2 -translate-y-1/2 h-8 rounded-full bg-[#3ABFF8] transition-all duration-300 z-0"
+                style={{ left: language === 'nl' ? 2 : '50%', width: '50%' }}
+              />
+              <button
+                onClick={() => setLanguage('nl')}
+                className={`relative z-10 px-3 py-1 text-sm rounded-full ${language === 'nl' ? 'text-[#0B1B2B]' : 'text-[#A1A1AA]'}`}
+                aria-label="Switch to Dutch"
+              >
+                NL
+              </button>
+              <button
+                onClick={() => setLanguage('en')}
+                className={`relative z-10 px-3 py-1 text-sm rounded-full ${language === 'en' ? 'text-[#0B1B2B]' : 'text-[#A1A1AA]'}`}
+                aria-label="Switch to English"
+              >
+                EN
+              </button>
+            </div>
           </div>
         </div>
       </div>

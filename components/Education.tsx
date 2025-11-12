@@ -42,8 +42,16 @@ const EducationCard: React.FC<{ item: EducationItem; onCardClick: (item: Educati
         <Card>
           <div className="p-6 pb-12 md:pb-6 relative">
             <div className="flex items-start">
-              <div>
+              <div className="w-full">
+                {/* mobile: centered logo above the name */}
+                {item.logoUrl && (
+                  <div className="flex justify-center md:hidden mb-2">
+                    <img src={item.logoUrl} alt={`${item.institution} logo`} className="w-12 h-12 object-contain" />
+                  </div>
+                )}
+
                 <h3 className="text-2xl font-bold text-[#3ABFF8]">{item.institution}</h3>
+
                 <div className="mt-2 flex items-center space-x-3">
                   <p className="text-sm text-[#A1A1AA]">{item.years}</p>
                   {/* translate status labels based on known Dutch status values, fallback to raw status */}
@@ -81,7 +89,7 @@ const EducationCard: React.FC<{ item: EducationItem; onCardClick: (item: Educati
             </div>
 
             {item.logoUrl && (
-              <img src={item.logoUrl} alt={`${item.institution} logo`} className="absolute top-6 right-6 w-16 h-16 object-contain" />
+              <img src={item.logoUrl} alt={`${item.institution} logo`} className="hidden md:block absolute top-6 right-6 w-16 h-16 object-contain" />
             )}
 
             {(item.dialogContent || item.accordionContent) && (
