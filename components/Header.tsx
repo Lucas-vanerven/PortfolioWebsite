@@ -67,7 +67,13 @@ export const Header: React.FC<HeaderProps> = ({ content, language, setLanguage }
     <header className="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-[#0B1B2B]/80 backdrop-blur-sm shadow-lg">
       <div className="container mx-auto px-4 md:px-8 lg:px-16">
         <div className="flex justify-between items-center h-20">
-          <div className="text-2xl font-bold text-[#3ABFF8]">{content.name}</div>
+          <button
+            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+            aria-label="Scroll to top"
+            className="text-2xl font-bold text-[#3ABFF8] cursor-pointer"
+          >
+            {content.name}
+          </button>
           <nav className="hidden md:flex items-center space-x-6">
             {navLinks.map((link) => (
               <button key={link.id} onClick={() => scrollToSection(link.id)} className="text-lg text-[#E5E7EB] hover:text-[#3ABFF8] transition-colors duration-300">
