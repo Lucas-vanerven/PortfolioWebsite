@@ -52,7 +52,7 @@ export const Dialog: React.FC<DialogProps> = ({ isOpen, onClose, title, children
             </svg>
           </button>
         </header>
-        <main className="p-6 overflow-y-auto">
+        <main className="p-6 overflow-y-auto dialog-scroll">
           {children}
         </main>
       </div>
