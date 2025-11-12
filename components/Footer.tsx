@@ -39,7 +39,7 @@ export const Footer: React.FC<{ content: FooterContent }> = ({ content }) => {
 
           <div className="flex flex-col items-center">
             <p className="text-2xl font-bold text-[#3ABFF8] text-center">Of mail mij persoonlijk</p>
-            <div className="mt-3 flex items-center space-x-3">
+            <div className="mt-3 flex flex-col sm:flex-row items-center sm:space-x-3 space-y-3 sm:space-y-0 flex-wrap justify-center">
               <a
                 href={`mailto:lucasvanerven@gmail.com`}
                 className="inline-flex items-center border border-[#3ABFF8] text-[#E5E7EB] px-4 py-2 rounded-full font-semibold hover:bg-[#3ABFF8]/5 transition-colors"
@@ -47,7 +47,7 @@ export const Footer: React.FC<{ content: FooterContent }> = ({ content }) => {
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-3" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M0 3v18h24v-18h-24zm21.518 2l-9.518 7.713-9.518-7.713h19.036zm-19.518 14v-11.817l10 8.104 10-8.104v11.817h-20z" />
                 </svg>
-                <span className="text-sm">lucasvanerven@gmail.com</span>
+                <span className="text-sm break-all">lucasvanerven@gmail.com</span>
               </a>
 
               <a
@@ -57,7 +57,7 @@ export const Footer: React.FC<{ content: FooterContent }> = ({ content }) => {
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-3" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M0 3v18h24v-18h-24zm21.518 2l-9.518 7.713-9.518-7.713h19.036zm-19.518 14v-11.817l10 8.104 10-8.104v11.817h-20z" />
                 </svg>
-                <span className="text-sm">lucas.van.erven@windesheim.nl</span>
+                <span className="text-sm break-all">lucas.van.erven@windesheim.nl</span>
               </a>
             </div>
           </div>
