@@ -72,9 +72,12 @@ export const WorkExperience: React.FC<{ content: WorkExperienceContent }> = ({ c
     const container = navRef.current;
     const activeEl = itemRefs.current[activeCategory];
     if (!container || !activeEl) return;
-    const containerRect = container.getBoundingClientRect();
-    const itemRect = activeEl.getBoundingClientRect();
-    setBubbleStyle({ left: itemRect.left - containerRect.left, width: itemRect.width });
+    // measure on next frame to ensure DOM/text updates (e.g., when language/content changes)
+    window.requestAnimationFrame(() => {
+      const containerRect = container.getBoundingClientRect();
+      const itemRect = activeEl.getBoundingClientRect();
+      setBubbleStyle({ left: itemRect.left - containerRect.left, width: itemRect.width });
+    });
   };
 
   useEffect(() => {
@@ -83,8 +86,9 @@ export const WorkExperience: React.FC<{ content: WorkExperienceContent }> = ({ c
     const onResize = () => updateBubble();
     window.addEventListener('resize', onResize);
     return () => window.removeEventListener('resize', onResize);
+    // also update when content changes (e.g., language swap that changes button text/width)
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [activeCategory]);
+  }, [activeCategory, content]);
   
   const categories = [
     { id: 'it', name: content.categories.it },

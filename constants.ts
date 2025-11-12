@@ -214,7 +214,7 @@ export const CONTENT: AppContent = {
       name: 'Lucas van Erven',
       navLinks: [
         { id: 'opleiding', text: 'Education' },
-        { id: 'ict-werkervaring', text: 'IT Work Experience' },
+        { id: 'ict-werkervaring', text: 'IT' },
         { id: 'andere-werkervaring', text: 'Other Work Experience' },
         { id: 'hobbys', text: 'Hobbies' },
       ],
@@ -352,7 +352,7 @@ export const CONTENT: AppContent = {
     workExperience: {
       title: 'Work Experience',
       categories: {
-        it: 'IT Work Experience',
+        it: 'IT',
         communication: 'Communication & Education',
         logistics: 'Logistics & Retail',
       },
