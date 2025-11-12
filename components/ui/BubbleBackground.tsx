@@ -22,7 +22,7 @@ export const BubbleBackground: React.FC<{ count?: number }> = ({ count = 20 }) =
           0% { transform: translateY(110vh) scale(1); opacity: 0; }
           8% { opacity: var(--o); }
           50% { opacity: calc(var(--o) * 0.9); }
-          100% { transform: translateY(-20vh) scale(0.9); opacity: 0; }
+          100% { transform: translateY(-40vh) scale(0.9); opacity: 0; }
         }
       `}</style>
 
