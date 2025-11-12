@@ -8,9 +8,9 @@ interface HeroProps {
 }
 
 const images = [
-  'https://picsum.photos/seed/me1/600/800',
-  'https://picsum.photos/seed/me2/600/800',
-  'https://picsum.photos/seed/me3/600/800',
+  '/assets/personal/hero-main.jpg',
+  '/assets/personal/hero-second.jpg',
+  '/assets/personal/hero-third.jpg',
 ];
 
 export const Hero: React.FC<HeroProps> = ({ content }) => {

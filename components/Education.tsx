@@ -71,7 +71,7 @@ const EducationCard: React.FC<{ item: EducationItem; onCardClick: (item: Educati
             </div>
 
             {item.logoUrl && (
-              <img src={item.logoUrl} alt={`${item.institution} logo`} className="absolute top-6 right-6 w-16 h-16 object-contain opacity-10" />
+              <img src={item.logoUrl} alt={`${item.institution} logo`} className="absolute top-6 right-6 w-16 h-16 object-contain" />
             )}
 
             {(item.dialogContent || item.accordionContent) && (

@@ -25,7 +25,7 @@ const JobCard: React.FC<{ job: Job; category?: string }> = ({ job, category }) =
         </div>
       </div>
       {job.logoUrl && (
-        <img src={job.logoUrl} alt={`${job.company} logo`} className="absolute top-6 right-6 w-16 h-16 object-contain opacity-10" />
+  <img src={job.logoUrl} alt={`${job.company} logo`} className="absolute top-6 right-6 w-16 h-16 object-contain" />
       )}
       {/* For IT jobs, show supervisor under the description; otherwise show above */}
   {category !== 'it' && job.supervisor && <p className="text-sm text-[#A1A1AA] mb-4 pb-2"><strong>Praktijkbegeleider / Coach:</strong> {job.supervisor}</p>}

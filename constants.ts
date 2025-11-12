@@ -29,7 +29,7 @@ export const CONTENT: AppContent = {
         {
           id: 'windesheim',
           institution: 'Hogeschool Windesheim',
-          logoUrl: 'https://picsum.photos/seed/windesheim/80/80',
+          logoUrl: '/assets/companies/windesheim-logo.svg',
           years: '2022 - heden',
           status: 'Lopend',
           details: {
@@ -93,7 +93,7 @@ export const CONTENT: AppContent = {
         {
           id: 'hu',
           institution: 'Hogeschool Utrecht',
-          logoUrl: 'https://picsum.photos/seed/hu/80/80',
+          logoUrl: '/assets/companies/hogeschoolutrecht-logo.svg',
           years: '2024-2025',
           status: 'Afgerond',
           details: {
@@ -122,7 +122,7 @@ export const CONTENT: AppContent = {
         {
           id: 'baken',
           institution: 'Baken Park Lyceum',
-          logoUrl: 'https://picsum.photos/seed/baken/80/80',
+          logoUrl: '/assets/companies/bakenpark-logo.png',
           years: '2018 - 2021',
           status: 'Afgerond',
           details: {
@@ -137,7 +137,7 @@ export const CONTENT: AppContent = {
             certificateNumber: 'NL-J-3223',
             issuedBy: 'ebcl-nederland',
             date: '04/07/2019',
-            logoUrl: 'https://picsum.photos/seed/ebcl/80/40',
+            logoUrl: '/assets/tech/EBCL-logo.png',
           }
         },
       ],
@@ -151,17 +151,17 @@ export const CONTENT: AppContent = {
       },
       jobs: {
         it: [
-          { title: 'Mobile Developer', company: 'Windesheim - Project PSEMO', date: '08/2025 — 02/2026', description: 'Praktijkgerichte Software Engineering met Onderwijs, ofwel PSEMO, is een project waarin ik in een tweetal werk aan het conceptualiseren, ontwerpen, ontwikkelen en implementeren van een mobiele app. Deze app is bedoeld om mensen met ADHD te ondersteunen bij het innemen van hun medicatie.', supervisor: 'Christian Nyqvist', skills: ['React Native Expo', 'Supabase', 'PostgreSQL', 'Scrum'], logoUrl: 'https://picsum.photos/seed/windesheim-work/80/80' },
-          { title: 'ICT-stagiair', company: 'AlphaRainbow', date: '03/2025 — 07/2025', description: 'Deze stage was de eerste omgeving waar ik volledig zelfstandig een ICT-project mocht uitvoeren. Gedurende deze periode heb ik op zowel persoonlijk als professioneel vlak veel groei doorgemaakt. Kwesties rondom mijn neurodivergentie welke mij voorheen nog onbekend waren, kwamen hier aan het licht. Onder begeleiding heb ik een webapplicatie ontwikkeld in Vue, gebaseerd op een lokaal Python-programma.', supervisor: 'Marco Strijker', skills: ['Python', 'Vue.js', 'Vite', 'Scrum/Waterval mix'], logoUrl: 'https://picsum.photos/seed/alpharainbow/80/80' },
-          { title: 'Software Developer', company: 'DareIT - Comakership Software Development', date: '02/2024 — 06/2024', description: 'Deze comaker markeerde mijn start als jong professional. In een groep van vier studenten hebben wij met MudBlazor een webapplicatie ontwikkeld. Deze webapplicatie moest de fundering vormen voor een nieuwe zusteractiviteit van het bedrijf. Wij hebben naar eigen zeggen van onze begeleider "uitstekend werk geleverd", en tot op heden wordt ons werk nog steeds gebruikt.', supervisor: 'René Gisbertz & Dave Ruiters', skills: ['C#', '.NET', 'MudBlazor', 'Basis Scrum'], logoUrl: 'https://picsum.photos/seed/dareit/80/80' }
+          { title: 'Mobile Developer', company: 'Windesheim - Project PSEMO', date: '08/2025 — 02/2026', description: 'Praktijkgerichte Software Engineering met Onderwijs, ofwel PSEMO, is een project waarin ik in een tweetal werk aan het conceptualiseren, ontwerpen, ontwikkelen en implementeren van een mobiele app. Deze app is bedoeld om mensen met ADHD te ondersteunen bij het innemen van hun medicatie.', supervisor: 'Christian Nyqvist', skills: ['React Native Expo', 'Supabase', 'PostgreSQL', 'Scrum'], logoUrl: '/assets/companies/windesheim-logo.svg' },
+          { title: 'ICT-stagiair', company: 'AlphaRainbow', date: '03/2025 — 07/2025', description: 'Deze stage was de eerste omgeving waar ik volledig zelfstandig een ICT-project mocht uitvoeren. Gedurende deze periode heb ik op zowel persoonlijk als professioneel vlak veel groei doorgemaakt. Kwesties rondom mijn neurodivergentie welke mij voorheen nog onbekend waren, kwamen hier aan het licht. Onder begeleiding heb ik een webapplicatie ontwikkeld in Vue, gebaseerd op een lokaal Python-programma.', supervisor: 'Marco Strijker', skills: ['Python', 'Vue.js', 'Vite', 'Scrum/Waterval mix'], logoUrl: '/assets/companies/alpharainbow-logo.svg' },
+    { title: 'Software Developer', company: 'DareIT - Comakership Software Development', date: '02/2024 — 06/2024', description: 'Deze comaker markeerde mijn start als jong professional. In een groep van vier studenten hebben wij met MudBlazor een webapplicatie ontwikkeld. Deze webapplicatie moest de fundering vormen voor een nieuwe zusteractiviteit van het bedrijf. Wij hebben naar eigen zeggen van onze begeleider "uitstekend werk geleverd", en tot op heden wordt ons werk nog steeds gebruikt.', supervisor: 'René Gisbertz & Dave Ruiters', skills: ['C#', '.NET', 'MudBlazor', 'Basis Scrum'], logoUrl: '/assets/companies/dareit-logo.png' }
         ],
         communication: [
-          { title: 'Studentambassadeur', company: 'Windesheim', date: '2023 — heden', description: 'Vertegenwoordigen van het HBO, en Windesheim promoten. Dit doe ik door voorlichtingen te geven aan, studie- en oriëntatiemarkten te organiseren voor, en andere activiteiten te ondergaan met middelbare scholieren.', skills: ['Teamleiding', 'Evenementorganisatie', 'Voorlichtingen geven', 'Publiekelijk spreken'], logoUrl: 'https://picsum.photos/seed/windesheim-comm/80/80' },
-          { title: 'Studentcoach', company: 'Windesheim', date: '2023 — 2024', description: 'Ondersteunen van jongerejaars studenten. Dit deed ik door persoonlijke begeleiding, 1-op-1 coaching, en lesgeven.', skills: ['Coaching', 'Gespreksvoering', 'Persoonlijke begeleiding', 'Lesgeven'], logoUrl: 'https://picsum.photos/seed/windesheim-coach/80/80' }
+          { title: 'Studentambassadeur', company: 'Windesheim', date: '2023 — heden', description: 'Vertegenwoordigen van het HBO, en Windesheim promoten. Dit doe ik door voorlichtingen te geven aan, studie- en oriëntatiemarkten te organiseren voor, en andere activiteiten te ondergaan met middelbare scholieren.', skills: ['Teamleiding', 'Evenementorganisatie', 'Voorlichtingen geven', 'Publiekelijk spreken'], logoUrl: '/assets/companies/windesheim-logo.svg' },
+          { title: 'Studentcoach', company: 'Windesheim', date: '2023 — 2024', description: 'Ondersteunen van jongerejaars studenten. Dit deed ik door persoonlijke begeleiding, 1-op-1 coaching, en lesgeven.', skills: ['Coaching', 'Gespreksvoering', 'Persoonlijke begeleiding', 'Lesgeven'], logoUrl: '/assets/companies/windesheim-logo.svg' }
         ],
         logistics: [
-          { title: 'Magazijnmedewerker', company: 'Macot Online B.V.', date: '06/2025 — heden', description: 'Met behulp van een handscanner en een WMS verzamel ik als primaire picker benodigde goederen voor klantbestellingen. Hierbij gebruik ik een EPT. Deze bestellingen worden vervolgens verpakt en verzendklaar gemaakt. Ook zorg ik voor inkomende goederen en de verwerking hiervan.', skills: ['WMS', 'Orderpicking', 'EPT', 'Inbound'], logoUrl: 'https://picsum.photos/seed/macot/80/80' },
-          { title: 'Logistiek Medewerker', company: 'BoekenVoordeel B.V.', date: '06/2023 — 05/2024', description: 'Als logistiek medewerker verzamelde ik klantbestellingen met een tablet, a.d.h.v. een WMS. Deze bestellingen maakte ik vervolgens verzendklaar. Na enige tijd kreeg ik leidinggevende taken, waardoor ik een team van ongeveer 8 medewerkers aanstuurde.', skills: ['Leidinggeven', 'Orderpicking', 'Orderpacking'], logoUrl: 'https://picsum.photos/seed/boekenvoordeel/80/80' }
+          { title: 'Magazijnmedewerker', company: 'Macot Online B.V.', date: '06/2025 — heden', description: 'Met behulp van een handscanner en een WMS verzamel ik als primaire picker benodigde goederen voor klantbestellingen. Hierbij gebruik ik een EPT. Deze bestellingen worden vervolgens verpakt en verzendklaar gemaakt. Ook zorg ik voor inkomende goederen en de verwerking hiervan.', skills: ['WMS', 'Orderpicking', 'EPT', 'Inbound'], logoUrl: '/assets/companies/mascotonline-logo.svg' },
+          { title: 'Logistiek Medewerker', company: 'BoekenVoordeel B.V.', date: '06/2023 — 05/2024', description: 'Als logistiek medewerker verzamelde ik klantbestellingen met een tablet, a.d.h.v. een WMS. Deze bestellingen maakte ik vervolgens verzendklaar. Na enige tijd kreeg ik leidinggevende taken, waardoor ik een team van ongeveer 8 medewerkers aanstuurde.', skills: ['Leidinggeven', 'Orderpicking', 'Orderpacking'], logoUrl: '/assets/companies/boekenvoordeel-logo.jpeg' }
         ]
       },
       technicalSkills: {
@@ -236,7 +236,7 @@ export const CONTENT: AppContent = {
         {
           id: 'windesheim',
           institution: 'Windesheim University of Applied Sciences',
-          logoUrl: 'https://picsum.photos/seed/windesheim/80/80',
+          logoUrl: '/assets/companies/windesheim-logo.svg',
           years: '2022 - present',
           status: 'Lopend',
           details: {
@@ -300,7 +300,7 @@ export const CONTENT: AppContent = {
         {
           id: 'hu',
           institution: 'Utrecht University of Applied Sciences',
-          logoUrl: 'https://picsum.photos/seed/hu/80/80',
+          logoUrl: '/assets/companies/hogeschoolutrecht-logo.svg',
           years: '2024-2025',
           status: 'Afgerond',
           details: {
@@ -329,7 +329,7 @@ export const CONTENT: AppContent = {
         {
           id: 'baken',
           institution: 'Baken Park Lyceum',
-          logoUrl: 'https://picsum.photos/seed/baken/80/80',
+          logoUrl: '/assets/companies/bakenpark-logo.png',
           years: '2018 - 2021',
           status: 'Afgerond',
           details: {
@@ -344,7 +344,7 @@ export const CONTENT: AppContent = {
             certificateNumber: 'NL-J-3223',
             issuedBy: 'ebcl-netherlands',
             date: '07/04/2019',
-            logoUrl: 'https://picsum.photos/seed/ebcl/80/40',
+            logoUrl: '/assets/tech/EBCL-logo.png',
           }
         },
       ],
@@ -358,17 +358,17 @@ export const CONTENT: AppContent = {
       },
       jobs: {
         it: [
-          { title: 'Mobile Developer', company: 'Windesheim - Project PSEMO', date: '08/2025 — 02/2026', description: 'Practice-oriented Software Engineering with Education (PSEMO) is a project where I work in a team of two to conceptualize, design, develop, and implement a mobile app. This app is intended to support people with ADHD in taking their medication.', supervisor: 'Christian Nyqvist', skills: ['React Native Expo', 'Supabase', 'PostgreSQL', 'Scrum'], logoUrl: 'https://picsum.photos/seed/windesheim-work/80/80' },
-          { title: 'IT Intern', company: 'AlphaRainbow', date: '03/2025 — 07/2025', description: 'This internship was the first environment where I could independently carry out an IT project. During this period, I experienced significant personal and professional growth. Issues related to my neurodivergence, previously unknown to me, came to light here. Under guidance, I developed a web application in Vue, based on a local Python program.', supervisor: 'Marco Strijker', skills: ['Python', 'Vue.js', 'Vite', 'Scrum/Waterfall mix'], logoUrl: 'https://picsum.photos/seed/alpharainbow/80/80' },
-          { title: 'Software Developer', company: 'DareIT - Comakership Software Development', date: '02/2024 — 06/2024', description: 'This comakership marked my start as a young professional. In a group of four students, we developed a web application with MudBlazor. This web application was to form the foundation for a new sister activity of the company. According to our supervisor, we "delivered excellent work," and to this day, our work is still in use.', supervisor: 'René Gisbertz & Dave Ruiters', skills: ['C#', '.NET', 'MudBlazor', 'Basic Scrum'], logoUrl: 'https://picsum.photos/seed/dareit/80/80' }
+          { title: 'Mobile Developer', company: 'Windesheim - Project PSEMO', date: '08/2025 — 02/2026', description: 'Practice-oriented Software Engineering with Education (PSEMO) is a project where I work in a team of two to conceptualize, design, develop, and implement a mobile app. This app is intended to support people with ADHD in taking their medication.', supervisor: 'Christian Nyqvist', skills: ['React Native Expo', 'Supabase', 'PostgreSQL', 'Scrum'], logoUrl: '/assets/companies/windesheim-logo.svg' },
+          { title: 'IT Intern', company: 'AlphaRainbow', date: '03/2025 — 07/2025', description: 'This internship was the first environment where I could independently carry out an IT project. During this period, I experienced significant personal and professional growth. Issues related to my neurodivergence, previously unknown to me, came to light here. Under guidance, I developed a web application in Vue, based on a local Python program.', supervisor: 'Marco Strijker', skills: ['Python', 'Vue.js', 'Vite', 'Scrum/Waterfall mix'], logoUrl: '/assets/companies/alpharainbow-logo.svg' },
+    { title: 'Software Developer', company: 'DareIT - Comakership Software Development', date: '02/2024 — 06/2024', description: 'This comakership marked my start as a young professional. In a group of four students, we developed a web application with MudBlazor. This web application was to form the foundation for a new sister activity of the company. According to our supervisor, we "delivered excellent work," and to this day, our work is still in use.', supervisor: 'René Gisbertz & Dave Ruiters', skills: ['C#', '.NET', 'MudBlazor', 'Basic Scrum'], logoUrl: '/assets/companies/dareit-logo.png' }
         ],
         communication: [
-          { title: 'Student Ambassador', company: 'Windesheim', date: '2023 — present', description: 'Representing higher vocational education and promoting Windesheim. I do this by giving presentations to, organizing study and orientation fairs for, and engaging in other activities with high school students.', skills: ['Team Leadership', 'Event Organization', 'Giving Presentations', 'Public Speaking'], logoUrl: 'https://picsum.photos/seed/windesheim-comm/80/80' },
-          { title: 'Student Coach', company: 'Windesheim', date: '2023 — 2024', description: 'Supporting junior students. I did this through personal guidance, 1-on-1 coaching, and teaching.', skills: ['Coaching', 'Conversation Skills', 'Personal Guidance', 'Teaching'], logoUrl: 'https://picsum.photos/seed/windesheim-coach/80/80' }
+          { title: 'Student Ambassador', company: 'Windesheim', date: '2023 — present', description: 'Representing higher vocational education and promoting Windesheim. I do this by giving presentations to, organizing study and orientation fairs for, and engaging in other activities with high school students.', skills: ['Team Leadership', 'Event Organization', 'Giving Presentations', 'Public Speaking'], logoUrl: '/assets/companies/windesheim-logo.svg' },
+          { title: 'Student Coach', company: 'Windesheim', date: '2023 — 2024', description: 'Supporting junior students. I did this through personal guidance, 1-on-1 coaching, and teaching.', skills: ['Coaching', 'Conversation Skills', 'Personal Guidance', 'Teaching'], logoUrl: '/assets/companies/windesheim-logo.svg' }
         ],
         logistics: [
-          { title: 'Warehouse Employee', company: 'Macot Online B.V.', date: '06/2025 — present', description: 'Using a hand scanner and a WMS, I work as a primary picker to collect necessary goods for customer orders. I use an EPT for this. These orders are then packed and made ready for shipment. I also handle incoming goods and their processing.', skills: ['WMS', 'Order Picking', 'EPT', 'Inbound'], logoUrl: 'https://picsum.photos/seed/macot/80/80' },
-          { title: 'Logistics Employee', company: 'BoekenVoordeel B.V.', date: '06/2023 — 05/2024', description: 'As a logistics employee, I collected customer orders with a tablet, based on a WMS. I then prepared these orders for shipment. After some time, I was given leadership tasks, managing a team of about 8 employees.', skills: ['Leadership', 'Order Picking', 'Order Packing'], logoUrl: 'https://picsum.photos/seed/boekenvoordeel/80/80' }
+          { title: 'Warehouse Employee', company: 'Macot Online B.V.', date: '06/2025 — present', description: 'Using a hand scanner and a WMS, I work as a primary picker to collect necessary goods for customer orders. I use an EPT for this. These orders are then packed and made ready for shipment. I also handle incoming goods and their processing.', skills: ['WMS', 'Order Picking', 'EPT', 'Inbound'], logoUrl: '/assets/companies/mascotonline-logo.svg' },
+          { title: 'Logistics Employee', company: 'BoekenVoordeel B.V.', date: '06/2023 — 05/2024', description: 'As a logistics employee, I collected customer orders with a tablet, based on a WMS. I then prepared these orders for shipment. After some time, I was given leadership tasks, managing a team of about 8 employees.', skills: ['Leadership', 'Order Picking', 'Order Packing'], logoUrl: '/assets/companies/boekenvoordeel-logo.jpeg' }
         ]
       },
       technicalSkills: {
