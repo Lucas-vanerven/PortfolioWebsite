@@ -25,7 +25,7 @@ const SkillPill: React.FC<{ text: string; className?: string }> = ({ text, class
   </span>
 );
 
-const EducationCard: React.FC<{ item: EducationItem; onCardClick: (item: EducationItem) => void; }> = ({ item, onCardClick }) => {
+const EducationCard: React.FC<{ item: EducationItem; onCardClick: (item: EducationItem) => void; labels?: any }> = ({ item, onCardClick, labels }) => {
   const [isAccordionOpen, setIsAccordionOpen] = useState(false);
 
   const handleClick = () => {
@@ -46,26 +46,36 @@ const EducationCard: React.FC<{ item: EducationItem; onCardClick: (item: Educati
                 <h3 className="text-2xl font-bold text-[#3ABFF8]">{item.institution}</h3>
                 <div className="mt-2 flex items-center space-x-3">
                   <p className="text-sm text-[#A1A1AA]">{item.years}</p>
-                  <Pill text={item.status} className={statusColors[item.status]} />
+                  {/* translate status labels based on known Dutch status values, fallback to raw status */}
+                  {(() => {
+                    const s = (item.status || '').toLowerCase();
+                    let disp = item.status;
+                    if (labels) {
+                      if (s.includes('lop')) disp = labels.statusInProgress ?? item.status;
+                      else if (s.includes('afger')) disp = labels.statusCompleted ?? item.status;
+                      else if (s.includes('kom')) disp = labels.statusUpcoming ?? item.status;
+                    }
+                    return <Pill text={disp} className={statusColors[item.status]} />;
+                  })()}
                 </div>
               </div>
             </div>
 
             <div className="grid grid-cols-2 gap-4 mt-4 border-t border-[#1E3A5F] pt-4">
               <div>
-                <p className="text-sm text-[#A1A1AA]">Opleidingsnaam</p>
+                <p className="text-sm text-[#A1A1AA]">{labels?.courseName ?? 'Opleidingsnaam'}</p>
                 <p className="font-semibold">{item.details.opleidingsnaam}</p>
               </div>
               <div>
-                <p className="text-sm text-[#A1A1AA]">Niveau</p>
+                <p className="text-sm text-[#A1A1AA]">{labels?.level ?? 'Niveau'}</p>
                 <p className="font-semibold">{item.details.niveau}</p>
               </div>
               <div>
-                <p className="text-sm text-[#A1A1AA]">Uitstroomprofiel</p>
+                <p className="text-sm text-[#A1A1AA]">{labels?.profile ?? 'Uitstroomprofiel'}</p>
                 <p className="font-semibold">{item.details.uitstroomprofiel}</p>
               </div>
               <div>
-                <p className="text-sm text-[#A1A1AA]">Locatie</p>
+                <p className="text-sm text-[#A1A1AA]">{labels?.location ?? 'Locatie'}</p>
                 <p className="font-semibold">{item.details.locatie}</p>
               </div>
             </div>
@@ -94,14 +104,14 @@ const EducationCard: React.FC<{ item: EducationItem; onCardClick: (item: Educati
 
       {item.accordionContent && (
         <div className={`overflow-hidden transition-all duration-500 ease-in-out ${isAccordionOpen ? 'max-h-96' : 'max-h-0'}`}>
-          <div className={`bg-[#0f2638] rounded-t-lg rounded-b-lg p-6 mt-4 md:mt-2 w-11/12 md:w-5/6 mx-auto ${item.id === 'baken' ? 'border-r-4 border-[#3ABFF8] transition-all duration-300 hover:shadow-2xl hover:shadow-[#3ABFF8]/20 hover:border-[#F97316] hover:-translate-y-1 hover:-translate-x-1' : ''}`}>
+            <div className={`bg-[#0f2638] rounded-t-lg rounded-b-lg p-6 mt-4 md:mt-2 w-11/12 md:w-5/6 mx-auto ${item.id === 'baken' ? 'border-r-4 border-[#3ABFF8] transition-all duration-300 hover:shadow-2xl hover:shadow-[#3ABFF8]/20 hover:border-[#F97316] hover:-translate-y-1 hover:-translate-x-1' : ''}`}>
             <h4 className="text-xl font-bold text-[#3ABFF8]">{item.accordionContent.title}</h4>
             <div className="flex items-center mt-4">
                 {item.accordionContent.logoUrl && <img src={item.accordionContent.logoUrl} alt="Certificate Logo" className="h-10 mr-4" />}
                 <div>
-                    <p><strong>Certificaatnummer:</strong> {item.accordionContent.certificateNumber}</p>
-                    <p><strong>Uitgegeven door:</strong> {item.accordionContent.issuedBy}</p>
-                    <p><strong>Datum:</strong> {item.accordionContent.date}</p>
+                    <p><strong>{labels?.certificateNumber ?? 'Certificaatnummer'}:</strong> {item.accordionContent.certificateNumber}</p>
+                    <p><strong>{labels?.issuedBy ?? 'Uitgegeven door'}:</strong> {item.accordionContent.issuedBy}</p>
+                    <p><strong>{labels?.certificateDate ?? 'Datum'}:</strong> {item.accordionContent.date}</p>
                 </div>
             </div>
           </div>
@@ -130,16 +140,16 @@ export const Education: React.FC<{ content: EducationContent }> = ({ content }) 
         <div className="grid grid-cols-1 gap-8">
           {content.institutions.map((item) => (
             <div key={item.id} className="w-full md:w-2/3 mx-auto">
-              <EducationCard item={item} onCardClick={handleCardClick} />
+              <EducationCard item={item} onCardClick={handleCardClick} labels={content.labels} />
             </div>
           ))}
         </div>
         
         {selectedItem && selectedItem.dialogContent && (
           <Dialog isOpen={!!selectedItem} onClose={handleCloseDialog} title={selectedItem.dialogContent.title}>
-              {selectedItem.id === 'windesheim' && selectedItem.dialogContent.projects && (
+                  {selectedItem.id === 'windesheim' && selectedItem.dialogContent.projects && (
                 <div className="mb-8">
-                  <h3 className="text-2xl font-bold text-[#3ABFF8] mb-4">Projecten</h3>
+                  <h3 className="text-2xl font-bold text-[#3ABFF8] mb-4">{content.labels?.projects ?? 'Projecten'}</h3>
                   <div className="space-y-4">
                   {selectedItem.dialogContent.projects.map(p => (
                     <div key={p.title} className="bg-[#0B1B2B] p-4 rounded-lg border border-[#1E3A5F]">
@@ -154,9 +164,9 @@ export const Education: React.FC<{ content: EducationContent }> = ({ content }) 
                 </div>
               )}
 
-            {selectedItem.id === 'hu' && selectedItem.dialogContent.mainProject && (
+    {selectedItem.id === 'hu' && selectedItem.dialogContent.mainProject && (
                 <div className="mb-8">
-                  <h3 className="text-2xl font-bold text-[#3ABFF8] mb-4">Hoofdproject</h3>
+      <h3 className="text-2xl font-bold text-[#3ABFF8] mb-4">{content.labels?.mainProject ?? 'Hoofdproject'}</h3>
                    <div className="bg-[#0B1B2B] p-4 rounded-lg border border-[#1E3A5F]">
                       <h4 className="font-bold text-lg">{selectedItem.dialogContent.mainProject.title}</h4>
                       <p className="text-sm my-2">{selectedItem.dialogContent.mainProject.description}</p>
@@ -166,18 +176,19 @@ export const Education: React.FC<{ content: EducationContent }> = ({ content }) 
             
             {selectedItem.id === 'windesheim' && selectedItem.dialogContent.curriculum && (
               <div>
-                <h3 className="text-2xl font-bold text-[#3ABFF8] mb-4">Curriculum</h3>
+                <h3 className="text-2xl font-bold text-[#3ABFF8] mb-4">{content.labels?.curriculum ?? 'Curriculum'}</h3>
                 <div className="space-y-6">
                 {selectedItem.dialogContent.curriculum.map(year => (
                   <div key={year.year}>
-                    <h4 className="text-xl font-semibold mb-2 text-[#E5E7EB]">Jaar {year.year}</h4>
+                    <h4 className="text-xl font-semibold mb-2 text-[#E5E7EB]">{content.labels?.year ?? 'Jaar'} {year.year}</h4>
                     <ul className="space-y-2">
                     {year.courses.map(course => (
                       <li key={course.name} className="flex justify-between items-center bg-[#0B1B2B] p-2 rounded">
                         <span>{course.name}</span>
                         <div className="flex items-center space-x-2">
                           <span className="text-sm text-[#A1A1AA]">{course.credits} EC</span>
-                          <Pill text={course.status} className={statusColors[course.status]} />
+                          {/* translate status display using content labels when available */}
+                          <Pill text={((course.status || '').toLowerCase().includes('lop') ? content.labels?.statusInProgress : (course.status || '').toLowerCase().includes('afger') ? content.labels?.statusCompleted : (course.status || '').toLowerCase().includes('kom') ? content.labels?.statusUpcoming : course.status) || course.status} className={statusColors[course.status]} />
                         </div>
                       </li>
                     ))}
@@ -188,16 +199,16 @@ export const Education: React.FC<{ content: EducationContent }> = ({ content }) 
               </div>
             )}
             
-            {selectedItem.id === 'hu' && selectedItem.dialogContent.followedCourses && (
+      {selectedItem.id === 'hu' && selectedItem.dialogContent.followedCourses && (
                  <div>
-                    <h3 className="text-2xl font-bold text-[#3ABFF8] mb-4">Gevolgde Vakken</h3>
+        <h3 className="text-2xl font-bold text-[#3ABFF8] mb-4">{content.labels?.followedCourses ?? 'Gevolgde Vakken'}</h3>
                      <ul className="space-y-2">
                     {selectedItem.dialogContent.followedCourses.map(course => (
                       <li key={course.name} className="flex justify-between items-center bg-[#0B1B2B] p-2 rounded">
                         <span>{course.name}</span>
                         <div className="flex items-center space-x-2">
                           <span className="text-sm text-[#A1A1AA]">5 EC</span>
-                          <Pill text="Afgerond" className={statusColors['Afgerond']} />
+                          <Pill text={content.labels?.statusCompleted ?? 'Afgerond'} className={statusColors['Afgerond']} />
                         </div>
                       </li>
                     ))}

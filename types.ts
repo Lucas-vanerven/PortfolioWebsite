@@ -75,6 +75,24 @@ export interface EducationItem {
 export interface EducationContent {
   title: string;
   institutions: EducationItem[];
+  labels?: {
+    courseName?: string;
+    level?: string;
+    profile?: string;
+    location?: string;
+    projects?: string;
+    mainProject?: string;
+    curriculum?: string;
+    followedCourses?: string;
+    year?: string;
+    statusInProgress?: string;
+    statusCompleted?: string;
+    statusUpcoming?: string;
+    // labels for the extracurricular/accordion diploma section
+    certificateNumber?: string;
+    issuedBy?: string;
+    certificateDate?: string;
+  };
 }
 
 export interface Job {
@@ -119,6 +137,10 @@ export interface WorkExperienceContent {
     title: string;
     skills: TransferableSkill[];
   }
+  // optional labels for localization (e.g., supervisor label)
+  labels?: {
+    supervisor?: string;
+  };
 }
 
 
@@ -148,6 +170,11 @@ export interface FooterContent {
   title: string;
   email: string;
   linkedin: string;
+  labels?: {
+    linkedinHeading?: string;
+    emailHeading?: string;
+    copyright?: string;
+  };
 }
 
 export interface ContentData {

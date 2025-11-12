@@ -21,7 +21,7 @@ export const Footer: React.FC<{ content: FooterContent }> = ({ content }) => {
       <div className="container mx-auto px-4 md:px-8 lg:px-16 py-6 text-center">
         <div className="flex flex-col md:flex-row items-center justify-center md:space-x-12 space-y-6 md:space-y-0">
           <div className="flex flex-col items-center">
-            <p className="text-2xl font-bold text-[#3ABFF8]">Vind mij op LinkedIn</p>
+            <p className="text-2xl font-bold text-[#3ABFF8]">{content.labels?.linkedinHeading ?? 'Vind mij op LinkedIn'}</p>
             <div className="mt-3">
               <a
                 href={`https://www.linkedin.com/in/lucas-van-erven`}
@@ -38,7 +38,7 @@ export const Footer: React.FC<{ content: FooterContent }> = ({ content }) => {
           </div>
 
           <div className="flex flex-col items-center">
-            <p className="text-2xl font-bold text-[#3ABFF8] text-center">Of mail mij persoonlijk</p>
+            <p className="text-2xl font-bold text-[#3ABFF8] text-center">{content.labels?.emailHeading ?? 'Of mail mij persoonlijk'}</p>
             <div className="mt-3 flex flex-col sm:flex-row items-center sm:space-x-3 space-y-3 sm:space-y-0 flex-wrap justify-center">
               <a
                 href={`mailto:lucasvanerven@gmail.com`}
@@ -64,10 +64,10 @@ export const Footer: React.FC<{ content: FooterContent }> = ({ content }) => {
         </div>
 
         {/* small / mobile: keep centered copyright so it doesn't overlap content */}
-        <p className="text-sm text-[#A1A1AA] mt-6 md:hidden">© {new Date().getFullYear()} Lucas van Erven. All Rights Reserved.</p>
+  <p className="text-sm text-[#A1A1AA] mt-6 md:hidden">© {new Date().getFullYear()} Lucas van Erven. {content.labels?.copyright ?? 'All Rights Reserved.'}</p>
 
         {/* desktop: place copyright bottom-right, smaller size, absolutely positioned so it doesn't affect layout */}
-        <p className="hidden md:block text-xs text-[#A1A1AA] absolute right-6 bottom-3">© {new Date().getFullYear()} Lucas van Erven. All Rights Reserved.</p>
+  <p className="hidden md:block text-xs text-[#A1A1AA] absolute right-6 bottom-3">© {new Date().getFullYear()} Lucas van Erven. {content.labels?.copyright ?? 'All Rights Reserved.'}</p>
       </div>
     </footer>
   );

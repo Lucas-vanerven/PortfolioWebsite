@@ -19,12 +19,30 @@ export const CONTENT: AppContent = {
       paragraph2: 'Lees verder om meer over mij te weten te komen!',
     },
     aboutMe: {
+      title: 'Over mij',
       paragraph1: 'In 2022 ben ik mijn reis als developer begonnen door de opleiding HBO-ICT aan Hogeschool Windesheim te gaan volgen. In deze periode heb ik mijn vaardigheden op zowel professioneel als persoonlijk vlak gigantisch doen groeien. Hoewel ik geregeld tegen uitdagingen aanloop, ben ik altijd bereid om te leren en mijzelf te verbeteren.',
       paragraph2: 'Op 13-jarige leeftijd heb ik de diagnose PDD-NOS gekregen, hedendaags beter bekend als autismespectrumstoornis. Alhoewel ik altijd nog bezig ben met het begrijpen en temmen van mijn autisme, heb ik grote sprongen gemaakt om er mee om te gaan. Ik ben er namelijk goed van bewust dat mijn neurodivergentie van tijd tot tijd voor uitdagingen voor zowel mijzelf als anderen kan zorgen. Hiernaast ben ik onlangs gediagnosticeerd met ADHD. De combinatie van deze diagnoses verklaart veel over mijn manier van denken en handelen, en vormt soms verwarring in de sociale omgang. Desondanks ben ik van mening dat iemand\'s diagnostiek niet hun identiteit definieert. Er zitten namelijk ook vele voordelen aan mijn neurodivergentie. Gesprekken hierover zijn altijd welkom!',
       paragraph3: 'Verder ben ik fanatiek voorstander van sport en beweging. Zo doe ik twee à drie keer per week aan boogschieten, en doe ik regelmatig aan hardlopen en krachttraining. Verder doe ik ook mee aan evenementen zoals Mud Masters en Strong Viking.'
     },
     education: {
       title: 'Opleiding',
+      labels: {
+        courseName: 'Opleidingsnaam',
+        level: 'Niveau',
+        profile: 'Uitstroomprofiel',
+        location: 'Locatie',
+        projects: 'Projecten',
+        mainProject: 'Hoofdproject',
+        curriculum: 'Curriculum',
+        followedCourses: 'Gevolgde Vakken',
+        year: 'Jaar',
+        statusInProgress: 'Lopend',
+        statusCompleted: 'Afgerond',
+        statusUpcoming: 'Komend',
+        certificateNumber: 'Certificaatnummer',
+        issuedBy: 'Uitgegeven door',
+        certificateDate: 'Datum',
+      },
       institutions: [
         {
           id: 'windesheim',
@@ -47,7 +65,7 @@ export const CONTENT: AppContent = {
             ],
             curriculum: [
               { year: 4, courses: [
-                { name: 'Basis algoritmiek en informatica', status: 'Lopend', credits: 3 },
+                { name: 'Basis algoritmiek en informatica', status: 'Afgerond', credits: 3 },
                 { name: 'Introduction to machine learning', status: 'Lopend', credits: 5 },
                 { name: 'Low-code development', status: 'Lopend', credits: 5 },
                 { name: 'PSEMO', status: 'Lopend', credits: 15 },
@@ -144,6 +162,9 @@ export const CONTENT: AppContent = {
     },
     workExperience: {
       title: 'Werkervaring',
+      labels: {
+        supervisor: 'Praktijkbegeleider / Coach',
+      },
       categories: {
         it: 'ICT',
         communication: 'Communicatie & Onderwijs',
@@ -206,7 +227,12 @@ export const CONTENT: AppContent = {
     footer: {
       title: 'Connect',
       email: 'lucasvanerven@email.com',
-      linkedin: 'linkedin.com/in/lucasvanerven'
+      linkedin: 'linkedin.com/in/lucasvanerven',
+      labels: {
+        linkedinHeading: 'Vind mij op LinkedIn',
+        emailHeading: 'Of mail mij persoonlijk',
+        copyright: 'Alle rechten voorbehouden',
+      }
     }
   },
   en: {
@@ -233,6 +259,23 @@ export const CONTENT: AppContent = {
     },
     education: {
       title: 'Education',
+      labels: {
+  courseName: 'Study',
+        level: 'Level',
+        profile: 'Profile',
+        location: 'Location',
+        projects: 'Projects',
+        mainProject: 'Main Project',
+        curriculum: 'Curriculum',
+        followedCourses: 'Followed Courses',
+        year: 'Year',
+  statusInProgress: 'Ongoing',
+        statusCompleted: 'Completed',
+        statusUpcoming: 'Upcoming',
+        certificateNumber: 'Certificate number',
+        issuedBy: 'Issued by',
+        certificateDate: 'Date',
+      },
       institutions: [
         {
           id: 'windesheim',
@@ -352,6 +395,9 @@ export const CONTENT: AppContent = {
     },
     workExperience: {
       title: 'Work Experience',
+      labels: {
+        supervisor: 'Supervisor / Coach',
+      },
       categories: {
         it: 'IT',
         communication: 'Communication & Education',
@@ -414,7 +460,12 @@ export const CONTENT: AppContent = {
     footer: {
       title: 'Connect',
       email: 'lucasvanerven@email.com',
-      linkedin: 'linkedin.com/in/lucasvanerven'
+      linkedin: 'linkedin.com/in/lucasvanerven',
+      labels: {
+        linkedinHeading: 'Find me on LinkedIn',
+        emailHeading: 'Or email me personally',
+        copyright: 'All Rights Reserved.',
+      }
     }
   }
 };
