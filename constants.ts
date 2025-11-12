@@ -226,6 +226,7 @@ export const CONTENT: AppContent = {
       paragraph2: 'Read on to find out more about me!',
     },
     aboutMe: {
+      title: 'About Me',
       paragraph1: 'In 2022, I began my journey as a developer by starting the HBO-ICT program at Windesheim University of Applied Sciences. During this period, my skills have grown immensely, both professionally and personally. Although I regularly face challenges, I am always willing to learn and improve myself.',
       paragraph2: 'At the age of 13, I was diagnosed with PDD-NOS, now better known as autism spectrum disorder. Although I am still in the process of understanding and taming my autism, I have made great strides in coping with it. I am well aware that my neurodivergence can sometimes create challenges for myself and others. In addition, I was recently diagnosed with ADHD. The combination of these diagnoses explains a lot about my way of thinking and acting, and sometimes causes confusion in social interactions. Nevertheless, I believe that a person\'s diagnosis does not define their identity. There are also many advantages to my neurodivergence. Conversations about this are always welcome!',
       paragraph3: 'Furthermore, I am a fervent advocate of sports and exercise. I practice archery two to three times a week, and I regularly go running and do strength training. As a result, I also participate in events like Mud Masters and Strong Viking.'

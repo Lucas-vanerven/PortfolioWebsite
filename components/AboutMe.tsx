@@ -12,6 +12,7 @@ export const AboutMe: React.FC<AboutMeProps> = ({ content }) => {
   return (
     <AnimatedSection>
       <section id="about-me" className="py-24">
+        <h2 className="text-4xl font-bold text-center mb-6 text-[#3ABFF8]">{content.title ?? 'About Me'}</h2>
         <Card>
           <div className="p-8">
             <p className="mb-6 text-lg text-[#E5E7EB]">{content.paragraph1}</p>
