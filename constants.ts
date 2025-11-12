@@ -190,7 +190,7 @@ export const CONTENT: AppContent = {
         { name: 'Muziek', description: 'Muziek is mijn manier om te ontspannen, mijzelf te kalmeren, te focussen, en nog veel meer. Muziek is voor mij een bron van rust en comfort. Mijn muzieksmaak bevalt lang niet iedereen, maar ik geniet er des te meer van.', percentage: 100 },
         { name: '(Online) Spellen', description: 'Online spellen zijn voor mij een manier om te verbinden en plezier te hebben met vrienden. Ook met een bordspelletje en de juiste mensen kan ik groots genieten.', percentage: 65 },
         { name: 'Koken', description: 'Toegegeven, ik ben geen keukenprins. Echter vind ik het een aangename uitdaging om nieuwe recepten uit te proberen.', percentage: 40 },
-        { name: 'Alles en Niets', description: 'Met regelmaat start ik enthousiast nieuwe dingen - ideeën, projecten, hobby’s - vaak sneller dan ik ze kan afronden', percentage: 75 }
+        { name: 'Alles en Niets', description: 'Met regelmaat start ik enthousiast nieuwe dingen - ideeën, projecten, hobby’s - vaak sneller dan ik ze kan afronden.', percentage: 75 }
       ]
     },
     goals: {
