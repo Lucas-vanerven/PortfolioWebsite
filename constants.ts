@@ -183,7 +183,7 @@ export const CONTENT: AppContent = {
     },
     hobbies: {
       title: 'Hobby’s',
-      intro: 'Leer mij buiten het professionele leven kennen',
+      intro: 'Ontdek wat ik leuk vind om te doen in mijn vrije tijd.',
       hobbies: [
         { name: 'Boogschieten', description: 'Begin 2025 ben ik de wereld van de handboogsport ingestapt. Deze ogenschijnlijke eengvoudige sport is echter complexer dan meesten denken. Ondertussen schiet ik mijn eigen recurveboog, en ben ik actief lid van de Handboogvereniging Almere.', percentage: 80 },
         { name: 'Hardlopen', description: 'Hardlopen is voor mij de perfecte manier om mijn hoofd leeg te maken, en tegelijkertijd fit te blijven. Wegens langdurige blessures is mijn conditie de oude niet meer, maar langzaam maar zeker keert mijn hardloopplezier terug.', percentage: 50 },
@@ -194,7 +194,7 @@ export const CONTENT: AppContent = {
       ]
     },
     goals: {
-      title: 'Persoonlijke Toekomstdoelen',
+      title: 'Persoonlijke doelen',
       goals: [
         { title: 'Strong Viking bijl', description: 'Elke tweede deelname aan het evenement ontvangt een deelnemer een deel van de Strong Viking bijl. Deze bestaat uit vier stukken. Nog vijf deelnames te gaan!' },
         { title: 'Drie achtereenvolgende Almere Weerwater Runs', description: 'Jaarlijks wordt in Almere de Weerwater Run georganiseerd. Dit is het grootste hardloopevenement van de de stad, en brengt een fantastische sfeer met zich mee. Ik wil deze run drie achtereenvolgende jaren uitlopen.' },

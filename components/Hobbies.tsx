@@ -37,11 +37,13 @@ export const Hobbies: React.FC<{ content: HobbiesContent }> = ({ content }) => {
             {/* Embla carousel */}
             <div className="relative">
               <div className="overflow-hidden" ref={emblaRef}>
-                <div className="flex gap-6 py-6 px-4">
+                {/* remove vertical padding here so the viewport height matches the card height
+                    and buttons that use top-1/2 will align to the card middle */}
+                <div className="flex gap-6 px-4 items-stretch">
                   {hobbies.map((hobby, i) => (
                     <div key={hobby.name} className="flex:0 shrink-0 basis-auto" style={{ flex: '0 0 auto' }}>
-                      <div className="w-[260px] md:w-[340px]">
-                        <Card>
+                      <div className="w-[260px] md:w-[340px] h-[220px] md:h-[240px]">
+                        <Card className="h-full">
                           <div className="p-4 md:p-6 h-full flex flex-col">
                             <h3 className="text-base md:text-lg font-bold text-[#3ABFF8] mb-2">{hobby.name}</h3>
                             <p className="text-xs md:text-sm text-[#A1A1AA] flex-grow">{hobby.description}</p>
