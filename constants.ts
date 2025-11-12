@@ -187,9 +187,26 @@ export const CONTENT: AppContent = {
       },
       technicalSkills: {
         title: 'Technische Vaardigheden',
-        frontend: { title: 'Frontend', skills: [{name: 'Vue.js'}, {name: 'React Native Expo'}, {name: 'HTML'}, {name: 'CSS'}, {name: 'MudBlazor'}] },
-        backend: { title: 'Backend', skills: [{name: 'Node.js'}, {name: 'C#'}, {name: '.NET'}, {name: 'PHP'}, {name: 'Java'}, {name: 'Supabase'}] },
-        database: { title: 'Database', skills: [{name: 'SQL'}, {name: 'PostgreSQL'}, {name: 'MongoDB'}] }
+    frontend: { title: 'Frontend', skills: [
+      { name: 'Vue.js', logoUrl: '/assets/tech/vue-logo.svg' },
+      { name: 'React Native Expo', logoUrl: '/assets/tech/react-native-expo-logo.svg' },
+      { name: 'HTML', logoUrl: '/assets/tech/html-logo.png' },
+      { name: 'CSS', logoUrl: '/assets/tech/css-logo.png' },
+      { name: 'MudBlazor', logoUrl: '/assets/tech/mudblazor-logo.png' }
+    ] },
+    backend: { title: 'Backend', skills: [
+      { name: 'Node.js', logoUrl: '/assets/tech/nodejs-logo.webp' },
+      { name: 'C#', logoUrl: '/assets/tech/csharp-logo.avif' },
+      { name: '.NET', logoUrl: '/assets/tech/dotnet-logo.png' },
+      { name: 'PHP', logoUrl: '/assets/tech/php-logo.svg' },
+      { name: 'Java', logoUrl: '/assets/tech/java-logo.png' },
+      { name: 'Supabase', logoUrl: '/assets/tech/supabase-logo.png' }
+    ] },
+    database: { title: 'Database', skills: [
+      { name: 'SQL', logoUrl: '/assets/tech/sql-logo.png' },
+      { name: 'PostgreSQL', logoUrl: '/assets/tech/postgresql-logo.png' },
+      { name: 'MongoDB', logoUrl: '/assets/tech/mongodb-logo.png' }
+    ] }
       },
       transferableSkills: {
         title: 'Overdraagbare Vaardigheden',
