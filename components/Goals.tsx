@@ -15,21 +15,22 @@ const GoalIconImage: React.FC<{ src: string; alt?: string }> = ({ src, alt = 'go
 );
 
 const getGoalIcon = (title: string) => {
+  const baseUrl = import.meta.env.BASE_URL;
   const t = title.toLowerCase();
   if (t.includes('strong')) {
-    return <GoalIconImage src={'/assets/companies/strong_viking_logo.svg'} alt={'Strong Viking'} />;
+    return <GoalIconImage src={`${baseUrl}assets/companies/strong_viking_logo.svg`} alt={'Strong Viking'} />;
   }
   if (t.includes('weerwater') || t.includes('weerwater run') || t.includes('almere')) {
-    return <GoalIconImage src={'/assets/companies/Almere_weerwater_run_logo.jpg'} alt={'Almere Weerwater Run'} />;
+    return <GoalIconImage src={`${baseUrl}assets/companies/Almere_weerwater_run_logo.jpg`} alt={'Almere Weerwater Run'} />;
   }
   if (t.includes('marathon')) {
-    return <GoalIconImage src={'/assets/icons/running.svg'} alt={'Running / Marathon'} />;
+    return <GoalIconImage src={`${baseUrl}assets/icons/running.svg`} alt={'Running / Marathon'} />;
   }
   if (t.includes('kilimanjaro')) {
-    return <GoalIconImage src={'/assets/icons/Mountain.svg'} alt={'Kilimanjaro / Mountain'} />;
+    return <GoalIconImage src={`${baseUrl}assets/icons/Mountain.svg`} alt={'Kilimanjaro / Mountain'} />;
   }
   if (t.includes('psych') || t.includes('psychologie') || t.includes('psychology')) {
-    return <GoalIconImage src={'/assets/icons/psychology.svg'} alt={'Psychology'} />;
+    return <GoalIconImage src={`${baseUrl}assets/icons/psychology.svg`} alt={'Psychology'} />;
   }
   return <GoalIconSVG />;
 };

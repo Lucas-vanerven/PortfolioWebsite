@@ -7,10 +7,11 @@ interface HeroProps {
   content: HeroContent;
 }
 
+const baseUrl = import.meta.env.BASE_URL;
 const images = [
-  '/assets/personal/hero-main.jpg',
-  '/assets/personal/hero-second.jpg',
-  '/assets/personal/hero-third.jpg',
+  `${baseUrl}assets/personal/hero-main.jpg`,
+  `${baseUrl}assets/personal/hero-second.jpg`,
+  `${baseUrl}assets/personal/hero-third.jpg`,
 ];
 
 export const Hero: React.FC<HeroProps> = ({ content }) => {
