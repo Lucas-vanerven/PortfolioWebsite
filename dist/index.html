@@ -1,0 +1,76 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+  <link rel="icon" type="image/x-icon" href="/PortfolioWebsite/assets/icons/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lucas van Erven</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+      .fade-in-up {
+        animation: fadeIn 0.6s ease-out forwards;
+      }
+      /* Basic fallback styles so content is visible even when Tailwind CDN
+         doesn't generate utilities for classes that are added by React at runtime. */
+      body {
+        color: #E5E7EB;
+        font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+      /* Simple container fallback for when Tailwind container utility isn't present */
+      .container {
+        max-width: 1200px;
+        margin-left: auto;
+        margin-right: auto;
+        padding-left: 1rem;
+        padding-right: 1rem;
+      }
+      /* Dialog scrollbar styling (scoped to .dialog-scroll). */
+      /* WebKit browsers */
+      .dialog-scroll::-webkit-scrollbar {
+        width: 10px;
+      }
+      .dialog-scroll::-webkit-scrollbar-track {
+        background: transparent; /* keep it integrated with dialog bg */
+      }
+      .dialog-scroll::-webkit-scrollbar-thumb {
+        background-color: rgba(58,191,248,0.18); /* light teal */
+        border-radius: 9999px;
+        border: 2px solid transparent;
+        background-clip: padding-box;
+      }
+      .dialog-scroll::-webkit-scrollbar-thumb:hover {
+        background-color: rgba(58,191,248,0.36);
+      }
+
+      /* Firefox */
+      .dialog-scroll {
+        scrollbar-width: thin;
+        scrollbar-color: rgba(58,191,248,0.18) transparent;
+      }
+    </style>
+
+  <script type="importmap">
+{
+  "imports": {
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "recharts": "https://aistudiocdn.com/recharts@^3.4.1",
+    "react-dom": "https://aistudiocdn.com/react-dom@^19.2.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/"
+  }
+}
+</script>
+  <script type="module" crossorigin src="/PortfolioWebsite/assets/index-BZVmOB5T.js"></script>
+</head>
+  <body class="bg-[#0B1B2B]">
+    <div id="root"></div>
+    <div id="dialog-root"></div>
+  </body>
+</html>
