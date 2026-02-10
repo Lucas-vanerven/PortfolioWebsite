@@ -69,10 +69,10 @@ export const CONTENT: AppContent = {
             curriculum: [
               { year: 4, courses: [
                 { name: 'Basis algoritmiek en informatica', status: 'Afgerond', credits: 3 },
-                { name: 'Introduction to machine learning', status: 'Lopend', credits: 5 },
+                { name: 'Introduction to machine learning', status: 'Afgerond', credits: 5 },
                 { name: 'Low-code development', status: 'Lopend', credits: 5 },
-                { name: 'PSEMO', status: 'Lopend', credits: 15 },
-                { name: 'Visieontwikkeling', status: 'Komend', credits: 2 },
+                { name: 'PSEMO', status: 'Afgerond', credits: 15 },
+                { name: 'Visieontwikkeling', status: 'Afgerond', credits: 2 },
                 { name: 'Afstudeerstage', status: 'Komend', credits: 30 }
               ]},
               { year: 3, courses: [
@@ -319,10 +319,10 @@ export const CONTENT: AppContent = {
             curriculum: [
               { year: 4, courses: [
                 { name: 'Basic Algorithms and Informatics', status: 'Lopend', credits: 3 },
-                { name: 'Introduction to Machine Learning', status: 'Lopend', credits: 5 },
+                { name: 'Introduction to Machine Learning', status: 'Afgerond', credits: 5 },
                 { name: 'Low-Code Development', status: 'Lopend', credits: 5 },
-                { name: 'PSEMO', status: 'Lopend', credits: 15 },
-                { name: 'Vision Development', status: 'Komend', credits: 2 },
+                { name: 'PSEMO', status: 'Afgerond', credits: 15 },
+                { name: 'Vision Development', status: 'Afgerond', credits: 2 },
                 { name: 'Graduation Internship', status: 'Komend', credits: 30 }
               ]},
               { year: 3, courses: [
